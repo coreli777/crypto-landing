@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CryptoWave - Начни зарабатывать на криптовалюте уже сегодня. Надежная платформа для инвестиций в Bitcoin и другие криптовалюты.">
+    <meta name="keywords" content="криптовалюта, биткоин, инвестиции, заработок, bitcoin, crypto">
+    <meta property="og:title" content="CryptoWave - Заработай на криптовалюте">
+    <meta property="og:description" content="Платформа, где ты начнёшь зарабатывать даже без опыта">
+    <meta property="og:type" content="website">
+    <title>CryptoWave - Заработай на криптовалюте уже сегодня</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>₿</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #667eea;
+        }
+
+        .header-cta {
+            background: #667eea;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .header-cta:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 20px;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background: #4ade80;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #22c55e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: white;
+            padding: 60px 20px;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #64748b;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: #f8fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Steps Section */
+        .steps {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step-card h3 {
+            font-size: 24px;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .step-card p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Registration Section */
+        .registration {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .registration-content {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .registration h2 {
+            text-align: center;
+            font-size: 36px;
+            color: #1e293b;
+            margin-bottom: 15px;
+        }
+
+        .registration p {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 20px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background: #f8fafc;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            color: #1e293b;
+            margin-bottom: 3px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #f8fafc;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #1e293b;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: #e2e8f0;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s;
+            color: #64748b;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e293b;
+            padding: 60px 20px 30px;
+            color: white;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #667eea;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: #334155;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: #667eea;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            font-size: 24px;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: #5568d3;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-grid,
+            .steps-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                ₿ CryptoWave
+            </div>
+            <nav class="nav-links">
+                <a href="#features">Преимущества</a>
+                <a href="#steps">Как начать</a>
+                <a href="#testimonials">Отзывы</a>
+                <a href="#faq">FAQ</a>
+                <a href="#register" class="header-cta">Регистрация</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Заработай на криптовалюте уже сегодня</h1>
+                <p>Платформа, где ты начнёшь зарабатывать даже без опыта. Надёжно, просто, выгодно.</p>
+                <a href="#register" class="cta-button">Начать зарабатывать</a>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='400'%3E%3Cdefs%3E%3CradialGradient id='coin1'%3E%3Cstop offset='0%25' style='stop-color:%23f59e0b'/%3E%3Cstop offset='100%25' style='stop-color:%23d97706'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='150' cy='150' r='80' fill='url(%23coin1)' stroke='%23b45309' stroke-width='3'/%3E%3Ctext x='150' y='170' font-size='60' font-weight='bold' text-anchor='middle' fill='%23fff'%3E₿%3C/text%3E%3Ccircle cx='280' cy='180' r='80' fill='url(%23coin1)' stroke='%23b45309' stroke-width='3'/%3E%3Ctext x='280' y='200' font-size='60' font-weight='bold' text-anchor='middle' fill='%23fff'%3E₿%3C/text%3E%3Ccircle cx='390' cy='150' r='80' fill='url(%23coin1)' stroke='%23b45309' stroke-width='3'/%3E%3Ctext x='390' y='170' font-size='60' font-weight='bold' text-anchor='middle' fill='%23fff'%3E₿%3C/text%3E%3C/svg%3E" alt="Bitcoin">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">50K+</div>
+                <div class="stat-label">Активных пользователей</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">$2M+</div>
+                <div class="stat-label">Выплачено прибыли</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">99.9%</div>
+                <div class="stat-label">Uptime</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Поддержка</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <p class="section-subtitle">Мы создали идеальную платформу для заработка на криптовалюте</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Надёжные транзакции</h3>
+                <p>Ваши средства защищены блокчейном и двухфакторной аутентификацией. Безопасность на первом месте.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Рост дохода</h3>
+                <p>Инвестируйте в проверенные токены и увеличивайте свой капитал. Средняя доходность 15-25% годовых.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Глобальный доступ</h3>
+                <p>Работай с криптовалютой из любой точки мира 24/7. Никаких ограничений и границ.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Быстрые выплаты</h3>
+                <p>Выводи средства мгновенно. Обработка заявок занимает до 15 минут.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💎</div>
+                <h3>Низкие комиссии</h3>
+                <p>Минимальные комиссии за операции. Больше прибыли остаётся у тебя.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>Обучение</h3>
+                <p>Бесплатные курсы и материалы для новичков. Станьте экспертом в криптовалютах.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps" id="steps">
+        <h2 class="section-title">Как начать зарабатывать</h2>
+        <p class="section-subtitle">Всего 3 простых шага отделяют вас от первой прибыли</p>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Создай аккаунт</h3>
+                <p>Зарегистрируйся за 1 минуту и получи доступ к личному кабинету. Полностью бесплатно.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Пополни кошелёк</h3>
+                <p>Внеси депозит с карты или криптовалюты — безопасно и быстро. Минимум от $50.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Начни зарабатывать</h3>
+                <p>Следи за ростом прибыли и выводи средства в любое время. Без ограничений.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="registration" id="register">
+        <div class="registration-content">
+            <h2>Создай аккаунт прямо сейчас</h2>
+            <p>Присоединяйся к 50,000+ пользователей, которые уже зарабатывают</p>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+                </div>
+                <div class="form-group">
+                    <label for="country">Страна</label>
+                    <select id="country" name="country" required>
+                        <option value="">Выберите страну</option>
+                        <option value="RU">Россия</option>
+                        <option value="UA">Украина</option>
+                        <option value="KZ">Казахстан</option>
+                        <option value="BY">Беларусь</option>
+                        <option value="OTHER">Другая</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">Зарегистрироваться бесплатно</button>
+                <p class="form-note">Регистрируясь, вы соглашаетесь с <a href="#" style="color: #667eea;">политикой конфиденциальности</a></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2 class="section-title">Что говорят наши клиенты</h2>
+        <p class="section-subtitle">Реальные отзывы от людей, которые изменили свою финансовую жизнь</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Благодаря этой платформе я превратил небольшие инвестиции в существенный доход всего за несколько месяцев. Команда поддержки просто фантастическая!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">М</div>
+                    <div class="author-info">
+                        <h4>Марк Т.</h4>
+                        <p>Инвестор</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"У меня не было опыта работы с криптовалютами, но простой интерфейс платформы помог мне быстро начать. Очень рекомендую!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">Л</div>
+                    <div class="author-info">
+                        <h4>Лиза Г.</h4>
+                        <p>Начинающий трейдер</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Функции безопасности дали мне спокойствие. Теперь я уверенно торгую и вижу, как моя прибыль растёт каждый день."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">И</div>
+                    <div class="author-info">
+                        <h4>Иван П.</h4>
+                        <p>Постоянный пользователь</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <h2 class="section-title">Частые вопросы</h2>
+        <p class="section-subtitle">Ответы на самые популярные вопросы о платформе</p>
+        <div class="faq-container">
+            <div
