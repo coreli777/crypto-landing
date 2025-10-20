@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoWave - Заработай на криптовалюте</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 80px 20px;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-text p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background: #4ade80;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: #22c55e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            background: #f8fafc;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .feature-card h3 {
+            font-size: 28px;
+            color: #5eaad8;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Steps Section */
+        .steps {
+            padding: 80px 20px;
+            background: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .step-card h3 {
+            font-size: 28px;
+            color: #5eaad8;
+            margin-bottom: 15px;
+        }
+
+        .step-card .emoji {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .step-card p {
+            font-size: 16px;
+            color: #64748b;
+            line-height: 1.8;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 42px;
+            color: #5eaad8;
+            margin-bottom: 15px;
+        }
+
+        .testimonials-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-size: 18px;
+            color: #5eaad8;
+            margin-bottom: 3px;
+        }
+
+        .author-info p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #1e293b;
+            font-size: 16px;
+        }
+
+        .footer-link {
+            color: #0ea5e9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0ea5e9;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            font-size: 24px;
+        }
+
+        .scroll-top:hover {
+            background: #0284c7;
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid,
+            .steps-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Заработай на криптовалюте уже сегодня"</h1>
+                <p>Платформа, где ты начнёшь зарабатывать даже без опыта.</p>
+                <a href="#steps" class="cta-button">Узнать больше</a>
+            </div>
+            <div class="hero-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='400'%3E%3Cdefs%3E%3CradialGradient id='coin1'%3E%3Cstop offset='0%25' style='stop-color:%23f59e0b'/%3E%3Cstop offset='100%25' style='stop-color:%23d97706'/%3E%3C/radialGradient%3E%3C/defs%3E%3Ccircle cx='150' cy='150' r='80' fill='url(%23coin1)' stroke='%23b45309' stroke-width='3'/%3E%3Ctext x='150' y='170' font-size='60' font-weight='bold' text-anchor='middle' fill='%23fff'%3E₿%3C/text%3E%3Ccircle cx='280' cy='180' r='80' fill='url(%23coin1)' stroke='%23b45309' stroke-width='3'/%3E%3Ctext x='280' y='200' font-size='60' font-weight='bold' text-anchor='middle' fill='%23fff'%3E₿%3C/text%3E%3Ccircle cx='390' cy='150' r='80' fill='url(%23coin1)' stroke='%23b45309' stroke-width='3'/%3E%3Ctext x='390' y='170' font-size='60' font-weight='bold' text-anchor='middle' fill='%23fff'%3E₿%3C/text%3E%3C/svg%3E" alt="Bitcoin">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>"Надёжные транзакции"</h3>
+                <p>"Ваши средства защищены блокчейном и двухфакторной аутентификацией."</p>
+            </div>
+            <div class="feature-card">
+                <h3>"Рост дохода"</h3>
+                <p>"Инвестируйте в проверенные токены и увеличивайте свой капитал."</p>
+            </div>
+            <div class="feature-card">
+                <h3>"Глобальный доступ"</h3>
+                <p>"Работай с криптовалютой из любой точки мира 24/7."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <section class="steps" id="steps">
+        <div class="steps-grid">
+            <div class="step-card">
+                <h3>"Создай аккаунт"</h3>
+                <p>"Зарегистрируйся за 1 минуту и получи доступ к личному кабинету."</p>
+            </div>
+            <div class="step-card">
+                <div class="emoji">👉</div>
+                <h3>Пополни кошелёк</h3>
+                <p>"Внеси депозит с карты или криптовалюты — безопасно и быстро."</p>
+            </div>
+            <div class="step-card">
+                <h3>Начни зарабатывать</h3>
+                <p>"Следи за ростом прибыли и выводи средства в любое время."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <p class="testimonials-subtitle">Hear from those who have transformed their financial journeys with us.</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Thanks to this platform, I turned my small investment into a substantial income in just a few months. The support team is fantastic!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">M</div>
+                    <div class="author-info">
+                        <h4>Mark T.</h4>
+                        <p>Investor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"I had no experience with cryptocurrencies, but their easy-to-use platform made it simple for me to start earning. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">L</div>
+                    <div class="author-info">
+                        <h4>Lisa G.</h4>
+                        <p>New Trader</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The security features gave me peace of mind. I now confidently trade and see my profits grow daily."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">J</div>
+                    <div class="author-info">
+                        <h4>John P.</h4>
+                        <p>Regular User</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 CryptoWave — Все права защищены.</p>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        ↑
+    </div>
+</body>
+</html>
